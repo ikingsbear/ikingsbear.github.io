@@ -4,11 +4,42 @@
   
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2020/02/14/test1/"/>
-      <url>/2020/02/14/test1/</url>
+      <title>WinForm-处理未处理的异常</title>
+      <link href="/2020/02/19/S%EF%BC%9A%E7%BC%96%E7%A8%8B-CSharp-Winform%E3%80%90Winform-%E5%A4%84%E7%90%86%E6%9C%AA%E5%A4%84%E7%90%86%E7%9A%84%E5%BC%82%E5%B8%B8%E3%80%91/"/>
+      <url>/2020/02/19/S%EF%BC%9A%E7%BC%96%E7%A8%8B-CSharp-Winform%E3%80%90Winform-%E5%A4%84%E7%90%86%E6%9C%AA%E5%A4%84%E7%90%86%E7%9A%84%E5%BC%82%E5%B8%B8%E3%80%91/</url>
       
-        <content type="html"><![CDATA[<h1 id="Test技术"><a href="#Test技术" class="headerlink" title="Test技术"></a>Test技术</h1><h3 id="这是一个测试文章"><a href="#这是一个测试文章" class="headerlink" title="这是一个测试文章"></a>这是一个测试文章</h3>]]></content>
+        <content type="html"><![CDATA[<p>一般在Winform窗体的程序里，处理窗体未处理的异常有：  </p><blockquote><p>1.使用Application.ThreadException事件可以处理UI线程的异常<br>  2.使用Application.UnhandledException事件来处理非UI线程异常 </p></blockquote><p>案例说明如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">static class Program</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;summary&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; 应用程序的主入口点。</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;</span><br><span class="line">        [STAThread]</span><br><span class="line">        static void Main()</span><br><span class="line">        &#123;</span><br><span class="line">            Application.ThreadException +&#x3D; MainUIThreadExceptionHandler;    &#x2F;&#x2F;注册处理UI线程异常的方法</span><br><span class="line">            AppDomain.CurrentDomain.UnhandledException +&#x3D; MainUIUnhandledExceptionHandler;   &#x2F;&#x2F;注册处理非UI线程异常的方法</span><br><span class="line">            Application.EnableVisualStyles();</span><br><span class="line">            Application.SetCompatibleTextRenderingDefault(false);</span><br><span class="line">            Application.Run(new MainForm());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;summary&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; 处理应用程序的未处理异常（UI线程异常）</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;param name&#x3D;&quot;sender&quot;&gt;&lt;&#x2F;param&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;param name&#x3D;&quot;e&quot;&gt;&lt;&#x2F;param&gt;</span><br><span class="line">        public static void MainUIThreadExceptionHandler(object sender, ThreadExceptionEventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line">            MessageBox.Show(e.Exception.Message, &quot;线程异常:&quot;, MessageBoxButtons.OK, MessageBoxIcon.Error);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;summary&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; 处理应用程序域内的未处理异常（非UI线程异常）</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;param name&#x3D;&quot;sender&quot;&gt;&lt;&#x2F;param&gt;</span><br><span class="line">        &#x2F;&#x2F;&#x2F; &lt;param name&#x3D;&quot;e&quot;&gt;&lt;&#x2F;param&gt;</span><br><span class="line">        public static void MainUIUnhandledExceptionHandler(object sender, UnhandledExceptionEventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line">            MessageBox.Show(e.ExceptionObject.ToString(), &quot;未处理的异常:&quot;, MessageBoxButtons.OK, MessageBoxIcon.Error);</span><br><span class="line">        &#125;      </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>需要注意的是，只能执行一次 Application.Run代码，如果你像下面这样写代码的话：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Application.Run(new SplashScreenForm());</span><br><span class="line">Application.Run(new MainForm());</span><br></pre></td></tr></table></figure><p>那么如果在MainForm出现未处理的异常（UI异常或是非UI异常），上面的异常处理程序就无法捕获了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+          <category> 编程 </category>
+          
+          <category> C# </category>
+          
+          <category> WinForm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C#【WinForm】 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>日志</title>
+      <link href="/2020/02/14/L%EF%BC%9A%E7%94%9F%E6%B4%BB-%E6%97%A5%E5%BF%97%E3%80%90%E3%80%91/"/>
+      <url>/2020/02/14/L%EF%BC%9A%E7%94%9F%E6%B4%BB-%E6%97%A5%E5%BF%97%E3%80%90%E3%80%91/</url>
+      
+        <content type="html"><![CDATA[]]></content>
       
       
       <categories>
@@ -30,40 +61,15 @@
     
     <entry>
       <title>Hello World</title>
-      <link href="/2020/02/14/test2/"/>
-      <url>/2020/02/14/test2/</url>
+      <link href="/2020/02/14/B%EF%BC%9A%E4%B9%A6%E8%AE%B0-%E6%84%9F%E6%82%9F%E3%80%90%E3%80%91/"/>
+      <url>/2020/02/14/B%EF%BC%9A%E4%B9%A6%E8%AE%B0-%E6%84%9F%E6%82%9F%E3%80%90%E3%80%91/</url>
       
-        <content type="html"><![CDATA[<h1 id="Test技术"><a href="#Test技术" class="headerlink" title="Test技术"></a>Test技术</h1><h3 id="这是一个测试文章"><a href="#这是一个测试文章" class="headerlink" title="这是一个测试文章"></a>这是一个测试文章</h3>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
       
       <categories>
           
           <category> 书记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 测试 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Winform-tips</title>
-      <link href="/2020/02/14/Winform-%E7%AC%94%E8%AE%B0/"/>
-      <url>/2020/02/14/Winform-%E7%AC%94%E8%AE%B0/</url>
-      
-        <content type="html"><![CDATA[<h1 id="Test技术"><a href="#Test技术" class="headerlink" title="Test技术"></a>Test技术</h1><h3 id="这是一个测试文章"><a href="#这是一个测试文章" class="headerlink" title="这是一个测试文章"></a>这是一个测试文章</h3>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术 </category>
           
       </categories>
       
