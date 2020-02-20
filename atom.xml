@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-19T11:09:56.228Z</updated>
+  <updated>2020-02-20T01:40:28.444Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,19 +21,14 @@
     <link href="http://yoursite.com/2020/02/19/S%EF%BC%9A%E7%BC%96%E7%A8%8B-CSharp-Winform%E3%80%90Winform-%E5%A4%84%E7%90%86%E6%9C%AA%E5%A4%84%E7%90%86%E7%9A%84%E5%BC%82%E5%B8%B8%E3%80%91/"/>
     <id>http://yoursite.com/2020/02/19/S%EF%BC%9A%E7%BC%96%E7%A8%8B-CSharp-Winform%E3%80%90Winform-%E5%A4%84%E7%90%86%E6%9C%AA%E5%A4%84%E7%90%86%E7%9A%84%E5%BC%82%E5%B8%B8%E3%80%91/</id>
     <published>2020-02-18T16:00:00.000Z</published>
-    <updated>2020-02-19T11:09:56.228Z</updated>
+    <updated>2020-02-20T01:40:28.444Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;一般在Winform窗体的程序里，处理窗体未处理的异常有：  &lt;/p&gt;
+      &lt;p&gt;一般在Winform窗体的程序里，处理窗体未处理的异常有：  &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;1.使用Application.ThreadException事件可以处理UI线程的异常&lt;br&gt; 
-        
-      
+&lt;p&gt;1.使用Application.ThreadException事件可以处理UI线程的异常&lt;br&gt;  2.使用Application.UnhandledException事件来处理非UI线程异常 &lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
