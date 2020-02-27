@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-20T01:40:28.444Z</updated>
+  <updated>2020-02-27T07:52:10.355Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,18 +17,15 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>WinForm-处理未处理的异常</title>
-    <link href="http://yoursite.com/2020/02/19/S%EF%BC%9A%E7%BC%96%E7%A8%8B-CSharp-Winform%E3%80%90Winform-%E5%A4%84%E7%90%86%E6%9C%AA%E5%A4%84%E7%90%86%E7%9A%84%E5%BC%82%E5%B8%B8%E3%80%91/"/>
-    <id>http://yoursite.com/2020/02/19/S%EF%BC%9A%E7%BC%96%E7%A8%8B-CSharp-Winform%E3%80%90Winform-%E5%A4%84%E7%90%86%E6%9C%AA%E5%A4%84%E7%90%86%E7%9A%84%E5%BC%82%E5%B8%B8%E3%80%91/</id>
-    <published>2020-02-18T16:00:00.000Z</published>
-    <updated>2020-02-20T01:40:28.444Z</updated>
+    <title>WinForm-编辑本地图片后不保存直接展示</title>
+    <link href="http://yoursite.com/2020/02/27/S%EF%BC%9A%E7%BC%96%E7%A8%8B-CSharp-Winform%E3%80%90Winform-%E7%BC%96%E8%BE%91%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E5%90%8E%E4%B8%8D%E4%BF%9D%E5%AD%98%E7%9B%B4%E6%8E%A5%E5%B1%95%E7%A4%BA%E3%80%91/"/>
+    <id>http://yoursite.com/2020/02/27/S%EF%BC%9A%E7%BC%96%E7%A8%8B-CSharp-Winform%E3%80%90Winform-%E7%BC%96%E8%BE%91%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E5%90%8E%E4%B8%8D%E4%BF%9D%E5%AD%98%E7%9B%B4%E6%8E%A5%E5%B1%95%E7%A4%BA%E3%80%91/</id>
+    <published>2020-02-26T16:00:00.000Z</published>
+    <updated>2020-02-27T07:52:10.355Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;一般在Winform窗体的程序里，处理窗体未处理的异常有：  &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;1.使用Application.ThreadException事件可以处理UI线程的异常&lt;br&gt;  2.使用Application.UnhandledException事件来处理非UI线程异常 &lt;/p&gt;
-&lt;/blockquote&gt;
+      &lt;p&gt;最近刚刚接手公司做Winform那个同事的代码， 客户就要求在展示图片的数据表datagridview上对应的图片表格同时能展示文本信息。查了好多资料，没找到能直接通过数据表的方式加上去，后面试了一下在获取到图片后，先通过gdi对文件加上文字，然后不保存到本地直接做展示。感觉官方winform做这种很吃力😂&lt;/p&gt;
     
     </summary>
     
@@ -48,14 +45,17 @@
   
   <entry>
     <title>WinForm-处理未处理的异常</title>
-    <link href="http://yoursite.com/2020/02/19/S%EF%BC%9A%E7%BC%96%E7%A8%8B-CSharp-Winform%E3%80%90Winform-%E5%A4%84%E7%90%86%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E5%90%8E%E4%B8%8D%E4%BF%9D%E5%AD%98%E7%9B%B4%E6%8E%A5%E5%B1%95%E7%A4%BA%E3%80%91/"/>
-    <id>http://yoursite.com/2020/02/19/S%EF%BC%9A%E7%BC%96%E7%A8%8B-CSharp-Winform%E3%80%90Winform-%E5%A4%84%E7%90%86%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E5%90%8E%E4%B8%8D%E4%BF%9D%E5%AD%98%E7%9B%B4%E6%8E%A5%E5%B1%95%E7%A4%BA%E3%80%91/</id>
+    <link href="http://yoursite.com/2020/02/19/S%EF%BC%9A%E7%BC%96%E7%A8%8B-CSharp-Winform%E3%80%90Winform-%E5%A4%84%E7%90%86%E6%9C%AA%E5%A4%84%E7%90%86%E7%9A%84%E5%BC%82%E5%B8%B8%E3%80%91/"/>
+    <id>http://yoursite.com/2020/02/19/S%EF%BC%9A%E7%BC%96%E7%A8%8B-CSharp-Winform%E3%80%90Winform-%E5%A4%84%E7%90%86%E6%9C%AA%E5%A4%84%E7%90%86%E7%9A%84%E5%BC%82%E5%B8%B8%E3%80%91/</id>
     <published>2020-02-18T16:00:00.000Z</published>
-    <updated>2020-02-27T07:38:05.868Z</updated>
+    <updated>2020-02-20T01:40:28.444Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;最近刚刚接手公司做Winform那个同事的代码， 客户就要求在展示图片的数据表datagridview上对应的图片表格同时能展示文本信息。查了好多资料，没找到能直接通过数据表的方式加上去，后面试了一下在获取到图片后，先通过gdi对文件加上文字，然后不保存到本地直接做展示。感觉官方winform做这种很吃力😂&lt;/p&gt;
+      &lt;p&gt;一般在Winform窗体的程序里，处理窗体未处理的异常有：  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1.使用Application.ThreadException事件可以处理UI线程的异常&lt;br&gt;  2.使用Application.UnhandledException事件来处理非UI线程异常 &lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
