@@ -47,6 +47,33 @@
   </entry>
   
   <entry>
+    <title>WinForm-处理未处理的异常</title>
+    <link href="http://yoursite.com/2020/02/19/S%EF%BC%9A%E7%BC%96%E7%A8%8B-CSharp-Winform%E3%80%90Winform-%E5%A4%84%E7%90%86%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E5%90%8E%E4%B8%8D%E4%BF%9D%E5%AD%98%E7%9B%B4%E6%8E%A5%E5%B1%95%E7%A4%BA%E3%80%91/"/>
+    <id>http://yoursite.com/2020/02/19/S%EF%BC%9A%E7%BC%96%E7%A8%8B-CSharp-Winform%E3%80%90Winform-%E5%A4%84%E7%90%86%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E5%90%8E%E4%B8%8D%E4%BF%9D%E5%AD%98%E7%9B%B4%E6%8E%A5%E5%B1%95%E7%A4%BA%E3%80%91/</id>
+    <published>2020-02-18T16:00:00.000Z</published>
+    <updated>2020-02-27T07:38:05.868Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近刚刚接手公司做Winform那个同事的代码， 客户就要求在展示图片的数据表datagridview上对应的图片表格同时能展示文本信息。查了好多资料，没找到能直接通过数据表的方式加上去，后面试了一下在获取到图片后，先通过gdi对文件加上文字，然后不保存到本地直接做展示。感觉官方winform做这种很吃力😂&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="编程" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="C#" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/%E7%BC%96%E7%A8%8B/C/"/>
+    
+      <category term="WinForm" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/%E7%BC%96%E7%A8%8B/C/WinForm/"/>
+    
+    
+      <category term="C#【WinForm】" scheme="http://yoursite.com/tags/C-%E3%80%90WinForm%E3%80%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>日志</title>
     <link href="http://yoursite.com/2020/02/14/L%EF%BC%9A%E7%94%9F%E6%B4%BB-%E6%97%A5%E5%BF%97%E3%80%90%E3%80%91/"/>
     <id>http://yoursite.com/2020/02/14/L%EF%BC%9A%E7%94%9F%E6%B4%BB-%E6%97%A5%E5%BF%97%E3%80%90%E3%80%91/</id>
